@@ -94,3 +94,5 @@ Nicole["deudas"] = 10000;
 console.log(Nicole);
 delete Nicole.hijos;
 console.log(Nicole);
+
+
