@@ -87,5 +87,5 @@ console.log('resouestaEvery',resouestaEvery) ;
 
 // map devuelve un arreglo
 
-const ResouestaMenoresDiez= arreglo.map((x)=>(x/2)+7).some((y)=>y<10);
-//const ResouestaMenoresDiez= arreglo.filter((x)=>(x/2)+7).some((y)=>y<10); // para saber cuales son 
+const ResouestaMenoresDiez= arreglo.map((x)=>(x/2)+7).some((y)=>y<10); //
+//const ResouestaMenoresDiez= arreglo.filter((x)=>(x/2)+7).some((y)=>y<10); // para saber cuales son
