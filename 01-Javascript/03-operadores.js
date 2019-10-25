@@ -59,7 +59,7 @@ const resouestaMap=arreglo .map (// transformar o mutar el erreglo
         const respuestaFindIndex1 =
             arreglo.reduce (
                 (valorIcicial, valorActual, indice, array ) => {
-            return valorIcicial + valorActual ;
+            return valofrIcicial + valorActual ;
         }, 0 // VALOR INICIAL
     );
 //predefine una variable inicial
@@ -158,9 +158,9 @@ console.log('resouestaEvery',resouestaEvery) ;
 // divido para dos y sumado 7 ver si es menor a 10
 
 // map devuelve un arreglo
-
+const t
 const ResouestaMenoresDiez= arreglo.map((x)=>(x/2)+7).some((y)=>y<10); //
 //const ResouestaMenoresDiez= arreglo.filter((x)=>(x/2)+7).some((y)=>y<10); // para saber cuales son
 
-
+// todos los comandos de deber implmentadas las funciones
 
