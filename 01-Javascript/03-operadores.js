@@ -162,5 +162,5 @@ console.log('resouestaEvery',resouestaEvery) ;
 const ResouestaMenoresDiez= arreglo.map((x)=>(x/2)+7).some((y)=>y<10); //
 //const ResouestaMenoresDiez= arreglo.filter((x)=>(x/2)+7).some((y)=>y<10); // para saber cuales son
 
-
+// todos los comandos
 
