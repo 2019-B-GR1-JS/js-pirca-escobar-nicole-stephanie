@@ -59,7 +59,7 @@ const resouestaMap=arreglo .map (// transformar o mutar el erreglo
         const respuestaFindIndex1 =
             arreglo.reduce (
                 (valorIcicial, valorActual, indice, array ) => {
-            return valorIcicial + valorActual ;
+            return valofrIcicial + valorActual ;
         }, 0 // VALOR INICIAL
     );
 //predefine una variable inicial
