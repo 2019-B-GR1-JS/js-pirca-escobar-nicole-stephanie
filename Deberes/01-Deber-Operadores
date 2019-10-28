@@ -1,0 +1,256 @@
+// Deber 01
+// En modelo ForEach
+
+const arreglo = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const respuestaForEach = arreglo
+    .forEach(
+        function (valorActual, indiceActual) {
+            valorActual = valorActual + 5;
+            //console.log('valorActual', valorActual);
+            //console.log('indiceActual', indiceActual);
+           //  console.log('arreglo', arreglo);
+        }
+    );
+// FORMA MANUAL
+function forEchaLocal(arreglo, funcion) {
+    for(let indiceInicial =0; indiceInicial <arreglo.length;
+        indiceInicial ++){
+        funcion(
+            arreglo[indiceInicial],
+            indiceInicial,
+            arreglo
+        );
+    }
+}
+
+forEchaLocal(
+    [1,2,3,4,5,6],
+    (valorActual,indiceActual,arreglo) =>{
+        console.log(valorActual)
+    }
+);
+
+//MAP
+const respuestaMap = arreglo
+    .map(  // Transformar -> Mutar ARREGLO
+        function (valorActual, indiceActual, arreglo) {
+            return valorActual + 5;
+        } // Devolver un elemento
+    ); // DEVUELVE UN **NUEVO** ARREGLO TRANSFORMADO
+console.log('respuestaMap', respuestaMap);
+// FORMA MANUAL
+
+function forMapLocal(arreglo, funcion) {
+    let newArreglo=[];
+    for(let indiceInicial =0; indiceInicial <arreglo.length;
+        indiceInicial ++){
+        newArreglo.push(funcion(
+            arreglo[indiceInicial],
+            indiceInicial,
+            arreglo
+        )
+    );
+    }
+    console.log('RespuestaMapManual',newArreglo);
+}
+forMapLocal(
+    [1,2,3,4,5,6,7,8,9,10],
+    (valorActual,indiceActual,arreglo) =>{
+        return valorActual + 5;
+    }
+);
+
+
+//FILTER
+
+const respuestaFilter = arreglo
+    .filter(  //
+        function (valorActual, indiceActual, arreglo) {
+            return valorActual > 7;
+        } // Devoler -> Expresion -> Truty o Falsy
+    ); // NUEVO ARREGLO -> Filtrado
+console.log('respuestaFilter', respuestaFilter);
+// Manual
+
+function forFilterLocal(arreglo, funcion) {
+    let newArreglo=[];
+        for(let indiceInicial =0; indiceInicial <arreglo.length;
+        indiceInicial ++){
+            if (true === funcion(
+                arreglo[indiceInicial],
+                indiceInicial,
+                arreglo))
+
+       newArreglo.push((arreglo[indiceInicial]))
+    }
+    console.log('RespuestaFilterManual',newArreglo);
+}
+forFilterLocal(
+    [1,2,3,4,5,6,7,8,9,10],
+    (valorActual,indiceActual,arreglo) =>{
+        return valorActual  > 7;
+    }
+);
+
+
+// SOME
+
+const respuestaSome = arreglo
+    .some(  //
+        function (valorActual, indiceActual, arreglo) {
+            return valorActual > 9 && valorActual < 11;
+        } // EXPRESION
+    ); // Devuelve -> Booleano
+console.log('respuestaSome', respuestaSome);
+// MANUAL
+
+function forSomeLocal(arreglo, funcion) {
+    let existe=false;
+    for(let indiceInicial =0; indiceInicial <arreglo.length;
+        indiceInicial ++){
+        if (true === funcion(
+            arreglo[indiceInicial],
+            indiceInicial,
+            arreglo)){
+            existe=true;
+          }
+    }
+        console.log('RespuestaSomeManual',existe);
+}
+
+forSomeLocal(
+    [1,2,3,4,5,6,7,8,9,10],
+    (valorActual,indiceActual,arreglo) =>{
+        return valorActual > 7 && valorActual < 11;
+    }
+);
+
+
+
+//  EVERY
+const respuestaEvery = arreglo
+    .every(  //
+        function (valorActual, indiceActual, arreglo) {
+            return valorActual > 1;
+        } // EXPRESION
+    ); // Devuelve -> Booleano
+console.log('respuestaEvery', respuestaEvery);
+
+// MANUAL
+function forEveryLocal(arreglo, funcion) {
+    let existe=true;
+    for(let indiceInicial =0; indiceInicial <arreglo.length;
+        indiceInicial ++){
+        if (funcion(
+            arreglo[indiceInicial],
+            indiceInicial,
+            arreglo)===false){
+            existe=false;
+        }
+    }
+    console.log('RespuestaEveryManual',existe);
+}
+
+forEveryLocal(
+    [1,2,3,4,5,6,7,8,9,10],
+    (valorActual,indiceActual,arreglo) =>{
+        return valorActual > 1;
+    }
+);
+
+
+// FIND
+const respuestaFind = arreglo.find(
+    (valor, indice, arreglo) => {
+        return valor === 8;
+    }
+);
+console.log('respuestaFind', respuestaFind);
+
+// MANUAL
+function findLocal(arreglo,funcion){
+    let respuesta = undefined;
+        for(let indiceInicial =0; indiceInicial <arreglo.length;
+        indiceInicial ++){
+        const existe = funcion(
+            arreglo[indiceInicial]);
+
+        if(typeof existe === "number"){
+            respuesta = existe;
+
+        }
+        }
+    console.log('RespuestaFindLocal', respuesta);
+}
+
+findLocal(
+    [1,2,3,4,5,6,7,8,9,10],
+    (valorActual,indiceActual,arreglo) =>{
+        if (valorActual < 5){
+        return valorActual;
+    }
+    }
+);
+
+
+ /// FILTER INDEX
+
+function findIndexLocal(arreglo,funcion){
+    let respuestaFindIndex = undefined;
+    for(let indiceInicial =0; indiceInicial <arreglo.length;
+        indiceInicial ++){
+        const existe = funcion(
+            arreglo[indiceInicial],
+            indiceInicial);
+
+        if(typeof existe === "number"){
+            respuestaFindIndex = existe;
+        }
+    }
+    console.log('RespuestaFindIndex:', respuestaFindIndex);
+}
+
+findIndexLocal(
+    [1,2,3,4,5,6,7,8,9,10],
+    (valorActual,indiceActual,arreglo) =>{
+        if (valorActual < 5){
+            return valorActual;
+        }
+    }
+);
+ // REDUCE
+const respuestaReduce = arreglo.reduce(
+    (valorInicial, valorActual, indice, array) => {
+        return valorInicial + valorActual;
+
+    }, 0);
+
+console.log('RespuestaReduce',respuestaReduce);
+
+// Manual
+function forReduceLocal(arreglo,funcion){
+    let acumulador = 0;
+        for(let indiceInicial =0; indiceInicial <arreglo.length;
+        indiceInicial ++) {
+            acumulador = funcion(acumulador, arreglo[indiceInicial],
+            );
+    }
+    console.log('RespuestaReduceLocal:', acumulador);
+}
+
+forReduceLocal([1,2,3,4,5,6,7,8,9,10],
+    (valorActual,indiceActual,arreglo) =>{
+
+            return indiceActual + valorActual;
+});
+
+
+
+
+
+
+
+
+
+
+
