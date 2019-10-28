@@ -1,3 +1,5 @@
+
+//FUNCIONES
 // definir funciones que devuelven algo
 
 function imprimirMensaje(){

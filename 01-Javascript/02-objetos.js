@@ -1,3 +1,5 @@
+//OBJETOS
+
 // 02-objetos.js  tienen una llave y un valor
 
 //VARIABLES INMUTABLES(NO CAMBIA) USAR CONST
@@ -10,18 +12,18 @@ arreglo.push(11);// un arreglo que si puede ser modificada deende d elos metodos
 console.log('arreglo',arreglo)
 // una variable constante no puede ser reacsignada
 arreglo.pop();
-console.log (arreglo', arreglo)
+console.log ('arreglo', arreglo)
 
 
 
     //agregar al final
 arreglo.splice(0,1,1.1); // agregar en la posicion que se desea
-console.log (arreglo', arreglo)
+console.log ('arreglo', arreglo)
 
 
 
 arreglo.unshift(0);
-console.log (arreglo', arreglo)
+console.log ('arreglo', arreglo)
 
 let  arregloNumber=[1,2,3,4];
 //arregloNumber=["a","b","c"]; //String
