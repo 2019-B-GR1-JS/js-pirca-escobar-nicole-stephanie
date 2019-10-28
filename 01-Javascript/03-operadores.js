@@ -1,3 +1,5 @@
+//OPERADORES
+
 const arreglo=[1,2,3,4,5,6,7,8,10];
 //
 //for
@@ -39,20 +41,9 @@ const resouestaMap=arreglo .map (// transformar o mutar el erreglo
         // devolver un elemento
 
 
-        const respuestaFindIndex =
-            arreglo.find (
-                predicate: (valorActual ) => {
-                    return valorActual ==8;
-        }
-            );
 
 
-        const respuestaFindIndex =
-            arreglo.find (
-                predicate: (valorActual, indice, arreglo ) => {
-            return valorActual ==8;
-        }
-    );
+
 
 
 // obtener el tamaño del arreglo s¡de 100 se resten todos los valores
@@ -66,50 +57,12 @@ const resouestaMap=arreglo .map (// transformar o mutar el erreglo
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 ); // devuelve un NUEVO ARREGLO TRANSFORMADO
 console.log('resouestaMap',resouestaMap) ;
 //arreglo sumados 5 se transforma el areglo
 
 console.log('arreglo',arreglo
-
-
-
 
 
 
@@ -158,7 +111,7 @@ console.log('resouestaEvery',resouestaEvery) ;
 // divido para dos y sumado 7 ver si es menor a 10
 
 // map devuelve un arreglo
-const t
+
 const ResouestaMenoresDiez= arreglo.map((x)=>(x/2)+7).some((y)=>y<10); //
 //const ResouestaMenoresDiez= arreglo.filter((x)=>(x/2)+7).some((y)=>y<10); // para saber cuales son
 
