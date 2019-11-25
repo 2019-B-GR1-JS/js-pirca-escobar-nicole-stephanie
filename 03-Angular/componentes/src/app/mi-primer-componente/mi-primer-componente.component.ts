@@ -19,7 +19,10 @@ export class MiPrimerComponenteComponent implements OnInit {
   public textoButton: string;
 
   @Output () //EVENTO
-  public cambioSueldo = new EventEmitter(); // definicion de mi evento desde el angular core
+  public cambioSueldo = new EventEmitter();
+  tamanio: string;
+
+  // definicion de mi evento desde el angular core
 
   constructor() {
     console.log('Instanciando');
@@ -49,8 +52,7 @@ aumentarSueldo(){
     this.cambioSueldo.emit(this.textoButton);
 }
 aumentarImagen(){
-    this.imagen=(Number(this.imagen)+1).toString();
-    console.log(this.imagen)
-
+    this.tamanio=(Number(this.tamanio)+1).toString();
+    
 }
 }
