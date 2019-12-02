@@ -5,20 +5,30 @@
 <!--MOSTRAR HTML -->
 <!-- Acceder a metodos y propiedades de clase -->
 
-<img [width]="tamanio"
-     [height]="tamanio"
-     [src] ="imagen" alt="">
-<!-- Propety Binding -->
-<!-- [atributo] ="valor" ->Atributos -->
-<!-- [evento] = "miFuncion ($event)" ->Evento -->
-
-
+<img [width]="tamanoImagen"
+     [height]="tamanoImagen"
+     [src]="imagen" alt="">
+<input type="text" (change)="miFuncion($event)">
+<input type="text" (change)="miFuncion2($event)">
+<!-- Property Binding -->
+<!-- [atributo]="valor" -> Atributos -->
 <p>{{textoImagen}}</p>
 
-<!-- evento blur se ejeuta cuando sale del foco  -->
-<!-- evento mouseeenter  todos los eventos van de on que omite   -->
-<button (click) ="aumentarImagen()"
+<!-- Event Binding -->
+<!-- (evento)="miFuncion($event)" -> Evento -->
+<button (click)="tamanoMas()"
 >
-  {{textoButton}}
+  {{textoBotonSuma}}
+</button>
 
-  </button>
+<button>
+  {{textoBotonResta}}
+</button>
+
+<button>
+  {{textoBotonDivision}}
+</button>
+
+<button>
+  {{textoBotonMultiplicacion}}
+</button>

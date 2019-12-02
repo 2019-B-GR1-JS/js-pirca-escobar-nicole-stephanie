@@ -2,6 +2,7 @@
   "name": "componentes",
   "version": "0.0.0",
   "scripts": {
+    "elcomandazo": "ls && mkdir pepito && cd pepito/ && touch ejemplo.ts",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -45,3 +46,4 @@
     "typescript": "~3.5.3"
   }
 }
+
