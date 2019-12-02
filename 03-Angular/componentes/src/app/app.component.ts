@@ -7,40 +7,43 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'componentes';
-  //objetos
-  arregloObjtos =[
+  // objetos
+  arregloObjetos = [
     {
-      id: 1, //Number
-      "nombre": "Nicole", //String
-      apellido: 'Pirca', //string
+      fecha : new Date(),
+      universidad : 'Escuela Politecnica Nacional',
+      id: 1, // Number
+      nombre: 'Nicole', // String
+      apellido: 'Pirca', // string
       sueldo: 12.12, // number
-      casado: false, //boolean
-      comida: "https://statics-cuidateplus.marca.com/sites/default/files/styles/natural/public/comida_2.jpg?itok=HmukTYgl",
+      casado: false, // boolean
+      comida: 'https://statics-cuidateplus.marca.com/sites/default/files/styles/natural/public/comida_2.jpg?itok=HmukTYgl',
       carro: null,
       ojos: undefined,
     },
     {
-      id: 2, //Number
-      "nombre": "Thais", //String
-      apellido: 'Escobar', //string
+      id: 2, // Number
+      nombre: 'Thais', // String
+      apellido: 'Escobar', // string
       sueldo: 12.12, // number
-      casado: false, //boolean
-      comida: "https://d25rq8gxcq0p71.cloudfront.net/language-guide/758/pepperoni%20pizza.jpg",
+      casado: false, // boolean
+      comida: 'https://d25rq8gxcq0p71.cloudfront.net/language-guide/758/pepperoni%20pizza.jpg',
       carro: null,
       ojos: undefined,
     },
     {
-      id: 3, //Number
-      "nombre": "Victor", //String
-      apellido: 'Lema', //string
+      id: 3, // Number
+      nombre: 'Victor', // String
+      apellido: 'Lema', // string
       sueldo: 12.12, // number
-      casado: false, //boolean
-      comida: "https://dam.ngenespanol.com/wp-content/uploads/2019/03/desperdicio-de-comida.png",
+      casado: false, // boolean
+      comida: 'https://dam.ngenespanol.com/wp-content/uploads/2019/03/desperdicio-de-comida.png',
       carro: null,
       ojos: undefined,
     }
-  ]
-  imprimirSueldo(sueldo: string){
+  ];
+  fecha: any;
+  imprimirSueldo(sueldo: string) {
     console.log(sueldo);
   }
 }

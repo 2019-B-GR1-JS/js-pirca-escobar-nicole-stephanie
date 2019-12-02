@@ -15,44 +15,77 @@ export class MiPrimerComponenteComponent implements OnInit {
   imagen: string;
   @Input()
   public textoImagen: string;
-  @Input()
-  public textoButton: string;
+  @Input() // Atributo Propiedad
+  public textoBotonSuma: string;
 
-  @Output () //EVENTO
-  public cambioSueldo = new EventEmitter();
-  tamanio: string;
+  @Input() // Atributo Propiedad
+  public textoBotonResta: string;
 
-  // definicion de mi evento desde el angular core
+  @Input() // Atributo Propiedad
+  public textoBotonMultiplicacion: string;
+
+  @Input() // Atributo Propiedad
+  public textoBotonDivision: string;
+
+  tamanoImagen = "200";
+  valor1 = 0;
+  valor2 = 0;
+  suma = 0;
+  resta = 0;
+  multiplicacion = 0;
+  division = 0;
+
+  @Output() // EVENTO
+  public sumarNumeros = new EventEmitter();
+
+  @Output() // EVENTO
+  public cambioTamano = new EventEmitter();
 
   constructor() {
-    console.log('Instanciando');
-  }  // instancia a la clase (nOS AYUDA EL MISMO ANGULAR)
-// esto es una interfaz que se implementa
+  } // Instancia la clase (Ayuda -> Angular)
 
-
-  ngOnInit() { // La clase esta lista
-    console.log('EST LISTO');
+  ngOnInit() {
     console.log('Esta listo');
+    console.log(this.titulo);
+    console.log(this.textoImagen);
+    console.log(this.textoBotonSuma);
+  } // La clase está lista
+
+  ngOnDestroy(): void {
+  } // La clase está destruida
+
+  tamanoMas() {
+    //this.textoBotonSuma = (this.miFuncion()+this.miFuncion2()).toString();
+    this.tamanoImagen = (Number(this.tamanoImagen) + 10).toString();
+    //this.cambioSueldo.emit(this.textoBotonSuma);
+    this.cambioTamano.emit(this.tamanoImagen);
   }
 
-  ngOnDestroy(): void { // la calase esta destruida
-
+  operaTodo(){
+    this.suma = this.valor1 + this.valor2;
+    this.textoBotonSuma = (this.suma).toString();
+    this.resta = this.valor1 - this.valor2;
+    this.textoBotonResta = (this.resta).toString();
+    this.multiplicacion = this.valor1 * this.valor2;
+    this.textoBotonMultiplicacion = (this.multiplicacion).toString();
+    this.division = this.valor1 / this.valor2;
+    this.textoBotonDivision = (this.division).toString();
   }
 
-  saludar(){
-    alert("HOLAAA");
+  miFuncion(evento) {
+    const elemento = evento.srcElement as any;
+    this.valor1 = Number(elemento.value);
+    this.operaTodo();
   }
 
-  //class (etiqueta html) (web-component)
-  // instanciar a la clase
-  // clase esta lista
-  // clase se destruye
-aumentarSueldo(){
-    this.textoButton =(Number(this.textoButton) +1).toString(); //transformar
-    this.cambioSueldo.emit(this.textoButton);
+  miFuncion2(evento) {
+    const elemento2 = evento.srcElement as any;
+    this.valor2 = Number(elemento2.value);
+    this.operaTodo();
+  }
 }
-aumentarImagen(){
-    this.tamanio=(Number(this.tamanio)+1).toString();
-    
-}
-}
+
+// class (etiqueta html) (web-component)
+// Instanciar a la clase
+// Clase esta lista
+// Clase se destruye
