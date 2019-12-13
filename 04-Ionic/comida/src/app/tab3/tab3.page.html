@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Formularios
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <!-- formularios de template -->
+    <!-- 1) Importar el modulo de formularios -->
+    <form (ngSubmit)="crearUsuario(usuarioFormulario)"
+          #usuarioFormulario="ngForm"
+    >
+        {{usuario.nombre}}
+        <!-- etiquetas -->
+        <h1 #papa>papa</h1>
+        <input type=" Texto"
+               name="nombre"
+               required
+               [(ngModel)]="usuario.nombre"
+               #nombreInpuy = "ngModel"
+        >
+      Valid {{nombreInpuy.valid}}
+      Invalid {{nombreInpuy.invalid}}
+      Touch {{nombreInpuy.touched}}
+      Untouched {{nombreInpuy.untouched}}
+      Disabled {{nombreInpuy.disabled}}
+      Enable {{nombreInpuy.enabled}}
+      Pristine {{nombreInpuy.pristine}}
+      Dirty {{nombreInpuy.dirty}}
+      Errors {{nombreInpuy.errors}}
+
+      <pre>
+        {{nombreInpuy.errors | json}}
+      </pre>
+
+        <button [disabled]="usuarioFormulario.invalid" > Aceptar</button>
+    </form>
+</ion-content>
