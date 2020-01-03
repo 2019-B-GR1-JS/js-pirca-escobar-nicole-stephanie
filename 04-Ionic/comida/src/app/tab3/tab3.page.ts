@@ -10,10 +10,20 @@ export class Tab3Page {
 
     usuario = {
         nombre: '',
-        apellido: ''
+        correo: '',
+        edad: '',
+        password: '',
+        passwordConfirmation: ''
     };
 
     constructor() {
+    }
+    validarPasswordsIguales(): boolean {
+        if(this.usuario.password === this.usuario.passwordConfirmation) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     crearUsuario(formulario: NgForm) {

@@ -1,10 +1,5 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-title>
-            Formularios
-        </ion-title>
-    </ion-toolbar>
-</ion-header>
+
+<ion-header >
 
 <ion-content>
     <!-- formularios de template -->
@@ -12,29 +7,157 @@
     <form (ngSubmit)="crearUsuario(usuarioFormulario)"
           #usuarioFormulario="ngForm"
     >
-        {{usuario.nombre}}
-        <!-- etiquetas -->
-        <h1 #papa>papa</h1>
-        <input type=" Texto"
-               name="nombre"
-               required
-               [(ngModel)]="usuario.nombre"
-               #nombreInpuy = "ngModel"
-        >
-      Valid {{nombreInpuy.valid}}
-      Invalid {{nombreInpuy.invalid}}
-      Touch {{nombreInpuy.touched}}
-      Untouched {{nombreInpuy.untouched}}
-      Disabled {{nombreInpuy.disabled}}
-      Enable {{nombreInpuy.enabled}}
-      Pristine {{nombreInpuy.pristine}}
-      Dirty {{nombreInpuy.dirty}}
-      Errors {{nombreInpuy.errors}}
+        <ion-item>
+            <h1>
+                Formularios
+            </h1>
+        </ion-item>
+        <ion-item>
 
-      <pre>
-        {{nombreInpuy.errors | json}}
-      </pre>
+            <ion-label> Nombre</ion-label>
+            <ion-input
+                    type=" text"
+                    name="nombre"
+                    required
+                    placeholder="Nicole Pirca"
+                    title="Llenar Nombre"
+                    minlength="3"
+                    maxlength="200"
+                    [(ngModel)]="usuario.nombre"
+                    #nombreInpuy="ngModel"></ion-input>
+        </ion-item>
+        <ion-item>
+            <div *ngIf=" nombreInpuy.touched && nombreInpuy.dirty && nombreInpuy.errors">
 
-        <button [disabled]="usuarioFormulario.invalid" > Aceptar</button>
+                <p *ngIf="nombreInpuy.errors.minlenght">
+                    llenar con un minimo de 3 caracteres
+                </p>
+
+                <p *ngIf="nombreInpuy.errors.maxlenght ">
+                    lllenar el campo con maximo de 200 caracteres
+                </p>
+                <p *ngIf="nombreInpuy.errors.required ">
+                    este campo es requerido
+                </p>
+
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label> Correo</ion-label>
+            <ion-input
+                    type=" text"
+                    name="correo"
+                    email
+                    required
+                    placeholder="correo@ejemplo.com"
+                    title="Llenar correo"
+
+                    [(ngModel)]="usuario.correo"
+                    #correoInpuy="ngModel"></ion-input>
+        </ion-item>
+        <ion-item>
+            <div *ngIf=" correoInpuy.touched && correoInpuy.dirty && correoInpuy.errors">
+
+                <p *ngIf="correoInpuy.errors.email">
+                    el minimo es 0
+                </p>
+                <p *ngIf="correoInpuy.errors.required ">
+                    este campo es requerido
+                </p>
+
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label> Edad</ion-label>
+            <ion-input
+                    type=" Number"
+                    name="edad"
+                    required
+                    placeholder="edad"
+                    title="Introducir la edad"
+                    min="0"
+                    max="150"
+                    pattern="([0-9])+"
+                    [(ngModel)]="usuario.edad"
+                    #edadInpuy="ngModel"></ion-input>
+        </ion-item>
+
+
+        <ion-item>
+            <div *ngIf=" edadInpuy.touched && edadInpuy.dirty && edadInpuy.errors">
+
+                <p *ngIf="edadInpuy.errors.min">
+                    el minimo es 0
+                </p>
+
+                <p *ngIf="edadInpuy.errors.max ">
+                    el maximo es 150
+                </p>
+                <p *ngIf="edadInpuy.errors.pattern ">
+                    este campo es requerido
+                </p>
+
+            </div>
+        </ion-item>
+
+        <ion-item>
+
+            <ion-label> Password</ion-label>
+            <ion-input
+                    type=" password"
+                    name="password"
+                    pattern="([0-9])+"
+                    required
+                    placeholder="Nicole Pirca"
+                    title="Llenar Nombre"
+                    minlength="3"
+                    maxlength="200"
+                    [(ngModel)]="usuario.password"
+                    #passwordInput="ngModel"></ion-input>
+        </ion-item>
+
+        <ion-item>
+
+            <ion-label> PasswordConfirmation</ion-label>
+            <ion-input
+                    type=" passwordConfirmation"
+                    name="passwordConfirmation"
+                    pattern="([0-9])+"
+                    required
+
+                    [(ngModel)]="usuario.passwordConfirmation"
+                    #passwordConfirmationInput="ngModel"></ion-input>
+        </ion-item>
+        <div *ngIf="passwordInput.touched && passwordInput.dirty && passwordConfirmationInput.touched &&
+passwordConfirmationInput.dirty">
+            <p *ngIf="validarPasswordsIguales()">
+                Las passwords no son iguales
+            </p>
+        </div>
+
+
+
+        <!-- <p> Valid {{nombreInpuy.valid}} </p>
+         <p>Invalid {{nombreInpuy.invalid}}</p>
+         <p>Touch {{nombreInpuy.touched}}</p>
+         <p>Untouched {{nombreInpuy.untouched}}</p>
+         <p>Disabled {{nombreInpuy.disabled}}</p>
+         <p>Enable {{nombreInpuy.enabled}}</p>
+         <p>Pristine {{nombreInpuy.pristine}}</p>
+         <p>Dirty {{nombreInpuy.dirty}}</p>
+         <h3>Errores {{nombreInpuy.errors}}</h3>
+ -->
+
+
+        <ion-button  expand="full"
+                     disabled]="(usuarioFormulario.invalid && validarPasswordsIguales()
+                     (usuarioFormulario.valid)) "> Aceptar</ion-button>
     </form>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
 </ion-content>
