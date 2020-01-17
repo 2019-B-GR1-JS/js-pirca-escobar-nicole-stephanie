@@ -14,10 +14,10 @@ module.exports = {
     apellido: {
       type: 'string'
     },
-    correo: {
-      type :'string'
+    correo:{
+      type: 'string'
     },
-    password: {
+    password:{
       type: 'string'
     }
 
