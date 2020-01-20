@@ -10,14 +10,26 @@ import {InputTextModule, TableModule} from 'primeng';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import {ModalEditarUsuarioComponent} from './modales/modal-editar-usuario/modal-editar-usuario.component';
-import {MatDialogModule} from "@angular/material/dialog";
-
-
+import {MatDialogModule} from '@angular/material/dialog';
+import { RutaInicioComponent } from './rutas/ruta-inicio/ruta-inicio.component';
+import { RutaLoginComponent } from './rutas/ruta-login/ruta-login.component';
+import { RutaUsuariosComponent } from './rutas/ruta-usuarios/ruta-usuarios.component';
+import { RutaGestionLibrosComponent } from './rutas/ruta-gestion-libros/ruta-gestion-libros.component';
+import { RutaCrearLibrosComponent } from './rutas/ruta-crear-libros/ruta-crear-libros.component';
+import { RutaBuscarLibrosComponent } from './rutas/ruta-buscar-libros/ruta-buscar-libros.component';
+import { RutaEditarLibrosComponent } from './rutas/ruta-editar-libros/ruta-editar-libros.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ModalEditarUsuarioComponent
+    ModalEditarUsuarioComponent,
+    RutaInicioComponent,
+    RutaLoginComponent,
+    RutaUsuariosComponent,
+    RutaGestionLibrosComponent,
+    RutaCrearLibrosComponent,
+    RutaBuscarLibrosComponent,
+    RutaEditarLibrosComponent
   ],
   entryComponents: [
     ModalEditarUsuarioComponent
