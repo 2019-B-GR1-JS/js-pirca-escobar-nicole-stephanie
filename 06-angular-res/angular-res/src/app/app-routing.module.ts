@@ -19,23 +19,23 @@ const routes: Routes = [
     component: RutaLoginComponent
   },
   {
-    path: 'inicio/gestion-usuarios',
+    path: 'inicio/usuarios',
     component: RutaUsuariosComponent
   },
   {
-    path: 'inicio/gestion-usuarios/gestion-libros',
+    path: 'inicio/usuarios/gestion-libros',
     component: RutaGestionLibrosComponent,
     children: [
       {
-        path: 'buscar',
+        path: 'buscar-libros',
         component: RutaBuscarLibrosComponent
       },
       {
-        path: 'editar',
+        path: 'editar-libros',
         component: RutaEditarLibrosComponent
       },
       {
-        path: 'crear',
+        path: 'crear-libros',
         component: RutaCrearLibrosComponent
       },
     ]

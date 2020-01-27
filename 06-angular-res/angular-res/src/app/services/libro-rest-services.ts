@@ -1,12 +1,13 @@
+import {Observable} from "rxjs";
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
-import {Observable} from "rxjs";
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class UsuarioRestService {
+export class LibrooRestService {
   url = environment.url + '/usuario';
 
   constructor(
@@ -27,7 +28,7 @@ export class UsuarioRestService {
   buscar(busqueda: string): Observable<any> {
     let consulta = '';
     if (busqueda) {
-      consulta = '?nombre=' + busqueda;
+      consulta = '?' + busqueda;
     }
     const urlBuscar = this.url + consulta;
     return this._httpClient

@@ -1,1 +1,19 @@
-<p>ruta-gestion-libros works!</p>
+<ul> <!-- Unordered List -->
+  <li>
+    <a [routerLink]="['buscar']"> <!-- Ancho/Ancla -->
+      Buscar
+    </a>
+  </li>
+  <li>
+    <a [routerLink]="['crear']"><!-- Ancho/Ancla -->
+      Crear
+    </a>
+  </li>
+  <li>
+    <a [routerLink]="['editar',1]"><!-- Ancho/Ancla -->
+      <!-- routerLink es un ARREGLO de SEGMENTOS URL  -->
+      Editar
+    </a>
+  </li>
+</ul>
+<router-outlet></router-outlet>

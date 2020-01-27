@@ -1,1 +1,10 @@
-<p>ruta-buscar-libros works!</p>
+<ul>
+  <li *ngFor="let libro of libros; let i = index;">
+    <p>
+      {{i}} - {{libro.nombre}}
+    </p>
+    <a [routerLink]="['/inicio','usuarios','idUsuario','gestion-libros','editar','libro.id']">
+      <p-button label="Editar libro"></p-button>
+    </a>
+  </li>
+</ul>

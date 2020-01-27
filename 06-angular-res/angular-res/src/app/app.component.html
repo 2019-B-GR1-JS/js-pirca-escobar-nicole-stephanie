@@ -1,63 +1,27 @@
 <ul> <!-- Unordered List -->
   <li>
-    <a [routerLink] = "['/inicio']">
+    <a [routerLink]="['/inicio']"> <!-- Ancho/Ancla -->
       Inicio
     </a>
   </li>
   <li>
-    <a [routerLink] = "['/login']">
+    <a [routerLink]="['/login']"><!-- Ancho/Ancla -->
       Login
     </a>
   </li>
   <li>
-    <a [routerLink] = "['/inicio','/gestion-usuarios']">
+    <a [routerLink]="['/inicio','usuarios']"><!-- Ancho/Ancla -->
+      <!-- routerLink es un ARREGLO de SEGMENTOS URL  -->
       Gestion de usuarios
     </a>
   </li>
   <li>
-    <a [routerLink] = "['/inicio','/gestion-usuarios','/gestion-libros']">
-      Gestion de Libros
+    <a [routerLink]="['/inicio','usuarios', 1,'gestion-libros']"><!-- Ancho/Ancla -->
+      Gestion de libros
     </a>
-  </li>
-
-
-
-<!--<table>
-  <tr>
-    <th>Nombre</th>
-    <th>Apellido</th>
-    <th>Correo</th>
-    <th>Password</th>
-  </tr>
-  <tr>
-    <td>Nicole</td>
-    <td>Pirca</td>
-    <td>a@a.com</td>
-    <td>1234</td>
-  </tr>
-</table>
-<table>
-  <tr>
-    <th>Nombre</th>
-    <th>Apellido</th>
-    <th>Correo</th>
-    <th>Password</th>
-    <th>Acciones</th>
-  </tr>
-  <tr *ngFor="let usuario of usuarios">
-    <td>{{usuario.nombre}}</td>
-    <td>{{usuario.apellido}}</td>
-    <td>{{usuario.correo}}</td>
-    <td>{{usuario.password}}</td>
-    <td>
-      <p-button label="EDITAR" (click)="editar(usuario)">
-      </p-button>
-      <p-button label="ELIMINAR" (click)="eliminar(usuario)">
-      </p-button>
-    </td>
-  </tr>
-</table>
-<h1></h1>
--->
+  </li><!-- List Item -->
+</ul>
 
 <router-outlet></router-outlet>
+
+<p>Pie de pagina</p>
