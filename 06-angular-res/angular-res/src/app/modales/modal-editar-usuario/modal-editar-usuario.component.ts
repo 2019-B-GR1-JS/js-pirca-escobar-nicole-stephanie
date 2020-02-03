@@ -1,5 +1,5 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-modal-editar-usuario',
@@ -7,10 +7,11 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
   styleUrls: ['./modal-editar-usuario.component.scss']
 })
 export class ModalEditarUsuarioComponent implements OnInit {
-  nombre = "";
-  apellido = "";
-  correo = "";
-  password = "";
+  nombre = '';
+  apellido = '';
+  correo = '';
+  password = '';
+  rol = '';
 
   constructor(
     public dialogRef: MatDialogRef<ModalEditarUsuarioComponent>,
@@ -23,6 +24,7 @@ export class ModalEditarUsuarioComponent implements OnInit {
     this.apellido = this.data.usuario.apellido;
     this.correo = this.data.usuario.correo;
     this.password = this.data.usuario.password;
+    this.rol = this.data.usuario.rol;
   }
 
   cancelar() {
@@ -36,6 +38,7 @@ export class ModalEditarUsuarioComponent implements OnInit {
         apellido: this.apellido,
         corre: this.correo,
         password: this.password,
+        rol: this.rol,
       });
   }
 }

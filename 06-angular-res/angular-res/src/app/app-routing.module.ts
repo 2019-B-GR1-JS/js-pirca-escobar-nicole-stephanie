@@ -7,6 +7,7 @@ import {RutaGestionLibrosComponent} from "./rutas/ruta-gestion-libros/ruta-gesti
 import {RutaBuscarLibrosComponent} from "./rutas/ruta-buscar-libros/ruta-buscar-libros.component";
 import {RutaEditarLibrosComponent} from "./rutas/ruta-editar-libros/ruta-editar-libros.component";
 import {RutaCrearLibrosComponent} from "./rutas/ruta-crear-libros/ruta-crear-libros.component";
+import {EstarLogeadoPolicy} from "./services/politicas/estar-logeado-policy";
 
 
 const routes: Routes = [
@@ -21,6 +22,13 @@ const routes: Routes = [
   {
     path: 'inicio/usuarios',
     component: RutaUsuariosComponent
+  },
+  {
+    path: 'inicio/gestion-usuarios',
+    component: RutaGestionLibrosComponent,
+    canActivate: [
+      EstarLogeadoPolicy,
+    ]
   },
   {
     path: 'inicio/usuarios/gestion-libros',

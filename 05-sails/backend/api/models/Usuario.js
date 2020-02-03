@@ -20,6 +20,9 @@ module.exports = {
     password:{
       type: 'string'
     },
+    rol:{
+      type: 'string'
+    },
     libros:{
       collection: 'libro',
       via: 'idUsuario'
