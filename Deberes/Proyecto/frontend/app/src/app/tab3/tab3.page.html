@@ -1,0 +1,169 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            <h1>
+                Adquisicion de un Artista
+            </h1>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col size="12">
+                <h3 style="text-align: center;width: 100%;font-weight: bold">
+                    Lista de Artistas
+                    <ion-button (click)="refreshArtistas()">
+                        <ion-icon name="refresh">
+
+                        </ion-icon>
+                    </ion-button>
+                </h3>
+                <ion-list style="width: 100%">
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col size="4">Nombre</ion-col>
+                            <ion-col size="3">Profesion</ion-col>
+                            <ion-col size="3">Valor de Marca</ion-col>
+                            <ion-col size="2">Agregar</ion-col>
+                        </ion-row>
+                    </ion-grid>
+                    <ion-item class="active"  *ngFor="let item of listaArtistas">
+                        <ion-grid>
+                            <ion-row>
+                                <ion-col size="4">{{item.nombre}}</ion-col>
+                                <ion-col size="3">{{item.profesion}}</ion-col>
+                                <ion-col size="3">{{item.valorMarca}}</ion-col>
+                                <ion-col size="2">
+                                    <ion-button color="success" (click)="agregarArtistas(item.nombre,item.profesion,item.valorMarca,item.id)">+1</ion-button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+        <ion-item-divider></ion-item-divider>
+        <ion-row>
+            <ion-col size="12">
+                <h3 style="text-align: center;width: 100%;font-weight: bold">
+                    Proceso de Adquision
+                </h3>
+                <ion-grid style="padding: 10px">
+                    <ion-row>
+                        <ion-col size="4">
+                            <ion-label>
+                                Productor:
+                            </ion-label>
+                        </ion-col>
+                        <ion-col size="8">
+                            <ion-input type="text" placeholder="Nombre"  [(ngModel)]="nombreProductor" disabled="true">
+                            </ion-input>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col size="4">
+                            <ion-label>
+                                Total: $
+                            </ion-label>
+                        </ion-col>
+                        <ion-col size="8">
+                            <ion-input type="number" [(ngModel)]="total" disabled="true">
+                            </ion-input>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col size="4">
+                            <ion-label>
+                                Nombre Manager:
+                            </ion-label>
+                        </ion-col>
+                        <ion-col size="8">
+                            <ion-input type="text" placeholder="Nombre Manager"  [(ngModel)]="nombre" >
+                            </ion-input>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col size="4">
+                            <ion-label>
+                                Identificacion:
+                            </ion-label>
+                        </ion-col>
+                        <ion-col size="8">
+                            <ion-input type="text" placeholder="Cédula/RUC"  [(ngModel)]="nombreProductor" >
+                            </ion-input>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col size="4">
+                            <ion-label>
+                                Dirección:
+                            </ion-label>
+                        </ion-col>
+                        <ion-col size="8">
+                            <ion-input type="text" placeholder="Dirección"  [(ngModel)]="direccion" >
+                            </ion-input>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col size="4">
+                            <ion-label>
+                                Dirección:
+                            </ion-label>
+                        </ion-col>
+                        <ion-col size="8">
+                            <ion-input type="text" placeholder="Teléfono"  [(ngModel)]="telefono" >
+                            </ion-input>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col size="4">
+                            <ion-label>
+                                Correo:
+                            </ion-label>
+                        </ion-col>
+                        <ion-col size="8">
+                            <ion-input type="text" placeholder="Correo"  [(ngModel)]="correo" >
+                            </ion-input>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+                <ion-list style="width: 100%">
+                    <ion-row>
+                        <ion-col size="3">Nombre</ion-col>
+                        <ion-col size="2">Profesion</ion-col>
+                        <ion-col size="2">Cantidad</ion-col>
+                        <ion-col size="2">Valor U.</ion-col>
+                        <ion-col size="2">Valor T.</ion-col>
+                        <ion-col size="1">Restar</ion-col>
+                    </ion-row>
+                    <ion-item class="active"  *ngFor="let item of carrito">
+                        <ion-grid>
+                            <ion-row>
+                                <ion-col size="3">{{item.nombre}}</ion-col>
+                                <ion-col size="2">{{item.industria}}</ion-col>
+                                <ion-col size="2">{{item.cantidad}}</ion-col>
+                                <ion-col size="2">{{item.valorMarca}}</ion-col>
+                                <ion-col size="2">{{item.valorMarcaTotal}}</ion-col>
+                                <ion-col size="1">
+                                    <ion-button color="danger" (click)="eliminarArtista(item.id,item.valorMarca)">-1</ion-button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col size="12" style="text-align: center">
+                <ion-button (click)="finalizarCompra()">
+                    <ion-icon name="cart">
+
+                    </ion-icon>
+                    Finalizar compra
+                </ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

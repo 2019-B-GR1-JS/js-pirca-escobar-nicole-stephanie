@@ -1,0 +1,71 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Crear Artista</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="closeModal()">Cerrar</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-col size="4">
+            <ion-label>Nombre:</ion-label>
+        </ion-col>
+        <ion-col size="8">
+            <ion-input [(ngModel)]="inputNombre" placeholder="Nombre"></ion-input>
+        </ion-col>
+    </ion-item>
+    <ion-item>
+        <ion-col size="4">
+            <ion-label>NickName:</ion-label>
+        </ion-col>
+        <ion-col size="8">
+            <ion-input type="text" [(ngModel)]="inputNickname" placeholder="Nickname"></ion-input>
+        </ion-col>
+    </ion-item>
+    <ion-item>
+        <ion-col size="4">
+            <ion-label>Profesion:</ion-label>
+        </ion-col>
+        <ion-col size="8">
+            <ion-input type="text" [(ngModel)]="inputProfesion" placeholder="Profesion"></ion-input>
+        </ion-col>
+    </ion-item>
+    <ion-item>
+        <ion-col size="4">
+            <ion-label>Fecha de Nacimiento:</ion-label>
+        </ion-col>
+        <ion-col size="8">
+            <ion-input type="date" [(ngModel)]="inputfechaNacimiento" placeholder="Fecha De Nacimiento"></ion-input>
+        </ion-col>
+    </ion-item>
+    <ion-item>
+        <ion-col size="4">
+            <ion-label>Valor de Marca Popularidad:</ion-label>
+        </ion-col>
+        <ion-col size="8">
+            <ion-input type="number" [(ngModel)]="inputvalorMarca" placeholder="Valor de Marca Artista"></ion-input>
+        </ion-col>
+    </ion-item>
+    <ion-item>
+        <ion-col size="4">
+            <ion-label>URL de descarga:</ion-label>
+        </ion-col>
+        <ion-col size="8">
+            <ion-input [(ngModel)]="inputURL" placeholder="URL"></ion-input>
+        </ion-col>
+    </ion-item>
+    <ion-item>
+        <ion-col size="6">
+            <ion-button color="success" (click)="guardarArtista()">
+                Guardar
+            </ion-button>
+        </ion-col>
+        <ion-col size="6">
+            <ion-button color="danger" (click)="closeModal()">
+                Cancelar
+            </ion-button>
+        </ion-col>
+    </ion-item>
+</ion-content>

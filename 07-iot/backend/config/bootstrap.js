@@ -8,23 +8,36 @@
  * For more information on seeding your app with fake data, check out:
  * https://sailsjs.com/config/bootstrap
  */
+// Importar Modulo Nodejs (Usarlo)
+// const modulo  = require('moduloRaspberry');
+const axios = require('axios');
+// npm install axios
+const moduloRaspberry = {
+  calcularProximidad: function () {
+    return Math.random() * (10 - 0) + 0;
+  }
+};
 
-module.exports.bootstrap = async function() {
+module.exports.bootstrap = async function () {
+  setInterval( // Ejecutar lo mismo cada dos segundos
+    async () => {
+      const valor = moduloRaspberry.calcularProximidad();
+      console.log('Valor proximidad: ', valor);
+      // 1337 -> IOT
+      // 1338 -> Backend
+      // HTTP
+      // POST http://localhost:1338/MonitoreoMovimiento {'valor':valor}
+      const respuestaServidor = await axios
+        .post(
+          'http://localhost:1338/MonitoreoMovimiento',
+          {
+            valor: valor
+          }
+        );
+      console.log('respuestaServidor', respuestaServidor);
+    },
+    2000 // 2 segundos
+  )
 
-  // By convention, this is a good place to set up fake data during development.
-  //
-  // For example:
-  // ```
-  // // Set up fake development data (or if we already have some, avast)
-  // if (await User.count() > 0) {
-  //   return;
-  // }
-  //
-  // await User.createEach([
-  //   { emailAddress: 'ry@example.com', fullName: 'Ryan Dahl', },
-  //   { emailAddress: 'rachael@example.com', fullName: 'Rachael Shaw', },
-  //   // etc.
-  // ]);
-  // ```
 
 };

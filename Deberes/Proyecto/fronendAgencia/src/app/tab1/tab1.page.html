@@ -1,0 +1,81 @@
+<ion-content color="light">
+
+    <ion-header translucent="true">
+        <div class="text-center">
+            <ion-toolbar color="primary">
+                <ion-title text-center>CONTRATOS REALIZADOS AGENCIAS Y ARTISTAS</ion-title>
+            </ion-toolbar>
+        </div>
+    </ion-header>
+
+    <ion-grid>
+        <ion-row>
+
+            <br>
+            <ion-item color="light">
+                <ion-col size="8">
+                    <h4 text-center> Roles de Contrato</h4>
+                    <ion-radio-group>
+                        <br>
+                        <ion-row>
+
+                            <ion-col size="4">
+
+                                <ion-label>Nombre del Cliente</ion-label>
+                            </ion-col>
+                            <ion-col size="4">
+                                <ion-radio (click)="buscarPorManger()" checked></ion-radio>
+                            </ion-col>
+
+                        </ion-row>
+
+                        <ion-row>
+                            <ion-col size="4">
+                                <ion-label>Productor</ion-label>
+                            </ion-col>
+                            <ion-col size="6">
+                                <ion-radio (click)="buscarPorProductor()"></ion-radio>
+                                <ion-input id="buscarApp" type="text" placeholder="Escriba el Nombre"
+                                           style="width: 100%" [(ngModel)]="busqueda">
+                                </ion-input>
+                            </ion-col>
+                        </ion-row>
+                    </ion-radio-group>
+                </ion-col>
+                <ion-col size="4">
+
+                    <ion-col size="7">
+                        <ion-button class="btn btn-light" style="width: 100%" (click)="buscarPorAdquisicion()">Buscar
+                        </ion-button>
+                    </ion-col>
+
+                </ion-col>
+                <ion-col size="4">
+                    <ion-button class="btn btn-light" style="width: 100%" (click)="buscarPorAdquisicion()">Buscar
+                    </ion-button>
+                </ion-col>
+            </ion-item>
+        </ion-row>
+    </ion-grid>
+
+
+        <ion-list style="text-align: center;width: 100%;font-weight: bold">
+            <h3>Lista de Contratos</h3>
+            <ion-grid>
+                <ion-row>
+                    <ion-col size="4">Nombre del Cliente</ion-col>
+                    <ion-col size="3">Nombre del Productor</ion-col>
+                    <ion-col size="3">Nombre del Artista</ion-col>
+                    <ion-col size="2">Total</ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-item *ngFor="let item of listaAdquisiones" style="width: 100%">
+                        <ion-col size="4">{{item.nombreManager}}</ion-col>
+                        <ion-col size="3">{{item.nombreProductor}}</ion-col>
+                        <ion-col size="3">{{item.nombreArtista}}</ion-col>
+                        <ion-col size="2">{{item.totalValorMarca}}</ion-col>
+                    </ion-item>
+                </ion-row>
+            </ion-grid>
+        </ion-list>
+</ion-content>

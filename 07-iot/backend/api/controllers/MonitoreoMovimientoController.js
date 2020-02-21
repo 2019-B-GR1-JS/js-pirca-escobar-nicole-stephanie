@@ -6,7 +6,11 @@
  */
 
 module.exports = {
-  
+  attributes: {
+    valor: {
+      type: 'number'
+    }
+  },
 
 };
 

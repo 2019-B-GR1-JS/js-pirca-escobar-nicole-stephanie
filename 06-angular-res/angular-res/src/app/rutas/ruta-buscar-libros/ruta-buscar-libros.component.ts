@@ -13,7 +13,9 @@ export class RutaBuscarLibrosComponent implements OnInit {
   idUsuario: number;
 
   constructor(
+    // tslint:disable-next-line:variable-name
     private readonly _activatedRoute: ActivatedRoute,
+    // tslint:disable-next-line:variable-name
     private readonly _libroRestService: LibrooRestService,
   ) {
   }

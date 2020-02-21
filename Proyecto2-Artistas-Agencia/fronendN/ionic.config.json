@@ -1,0 +1,7 @@
+{
+  "name": "fronendN",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
